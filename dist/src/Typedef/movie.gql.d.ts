@@ -1,0 +1,2 @@
+declare const _default: "\n    type Movie {\n        id : ID!\n        title : String!\n        poster: String\n        category : Category!\n    }\n\n    type MovieListingType {\n        data : [Movie]\n        pagination: PaginationType\n    }\n\n    extend type Mutation {\n        createMovie(title : String!, poster: String, category : String!) : Movie!\n    }\n    extend type Query {\n        getMovieById(id : ID!): Movie\n        listMovies: [Movie]\n        listMoviesWithPagination(listing:ListingInput):MovieListingType\n    }\n";
+export default _default;

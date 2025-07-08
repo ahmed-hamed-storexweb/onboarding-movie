@@ -23,7 +23,6 @@ class CreateMovieUseCase extends kernel_1.LogicComponent {
     }
     execute(input) {
         return __awaiter(this, void 0, void 0, function* () {
-            console.log(this.fileActions);
             yield (0, file_helpers_1.handlePoster)(input.poster, this.fileActions);
             return this.movieRepository.createMovie(input);
         });

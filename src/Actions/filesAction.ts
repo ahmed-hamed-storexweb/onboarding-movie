@@ -6,6 +6,9 @@ import {
 } from "../Interface/files.interface";
 
 export default class FilesActions extends LogicComponent {
+
+  // Calling the service "files" in the env file
+
   private get fileServiceCaller() {
     return this.serviceCaller("files");
   }
@@ -23,16 +26,5 @@ export default class FilesActions extends LogicComponent {
     return file.status ? file.result : null;
   }
 
-  async createFile(
-    args: ICreateFileActionArgs
-  ): Promise<{ result?: any; status?: boolean; message: string }> {
-    const file = await this.fileServiceCaller.call("createFile", args);
-    return file;
-  }
-
-  async deleteFiles(keys: string | string[]) {
-    const result = await this.fileServiceCaller.call("deleteFile", { keys });
-    return result;
-  }
 
 }

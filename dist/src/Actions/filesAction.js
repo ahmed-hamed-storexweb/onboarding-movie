@@ -11,6 +11,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 Object.defineProperty(exports, "__esModule", { value: true });
 const kernel_1 = require("@storexweb/kernel");
 class FilesActions extends kernel_1.LogicComponent {
+    // Calling the service "files" in the env file
     get fileServiceCaller() {
         return this.serviceCaller("files");
     }
@@ -18,18 +19,6 @@ class FilesActions extends kernel_1.LogicComponent {
         return __awaiter(this, void 0, void 0, function* () {
             const file = yield this.fileServiceCaller.call("saveFile", args);
             return file.status ? file.result : null;
-        });
-    }
-    createFile(args) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const file = yield this.fileServiceCaller.call("createFile", args);
-            return file;
-        });
-    }
-    deleteFiles(keys) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const result = yield this.fileServiceCaller.call("deleteFile", { keys });
-            return result;
         });
     }
 }
